@@ -1,0 +1,1027 @@
+{
+    "patient": {
+      "resourceType": "Patient",
+      "text": {
+        "status": "generated",
+        "div": "<div>Hypertension case: Patient record for hospitalization simulation</div>"
+      },
+      "name": [
+        {
+          "use": "official",
+          "family": "Smith",
+          "given": ["Jane"]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1965-04-15"
+    },
+    "intolerance_lactose": {
+      "category": ["food"],
+      "identifier": [
+          {
+              "system": "http://acme.com/ids/patients/risks",
+              "value": "49476535"
+          }
+      ],
+      "patient": {
+          "reference": "Patient/2591917"
+      },
+      "reaction": [
+          {
+              "manifestation": [
+                  {
+                      "coding": [
+                          {
+                              "code": "247472004",
+                              "display": "Swarming",
+                              "system": "http://snomed.info/sct"
+                          }
+                      ]
+                  }
+              ],
+              "substance": {
+          "coding": [
+              {
+                  "code": "227037002",
+                  "display": "Lactose",
+                  "system": "http://snomed.info/sct"
+              }
+          ],
+          "text": "Latose intolerance"
+      }
+          }
+      ],
+      "recordedDate": "2022-08-06T15:37:31-06:00",
+      "recorder": {
+          "reference": "Practitioner/example"
+      },
+      "resourceType": "AllergyIntolerance"
+  },
+    "alergy_penicillin": {
+        "category": ["medication"],
+        "identifier": [
+            {
+                "system": "http://acme.com/ids/patients/risks",
+                "value": "49476535"
+            }
+        ],
+        "patient": {
+            "reference": "Patient/{john.get('id')}"
+        },
+        "reaction": [
+            {
+                "manifestation": [
+                    {
+                        "coding": [
+                            {
+                                "code": "247472004",
+                                "display": "Hives",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    }
+                ],
+                "substance": {
+            "coding": [
+                {
+                    "code": "227037002",
+                    "display": "ALLERGENIC EXTRACT, PENICILLIN",
+                    "system": "http://snomed.info/sct"
+                }
+            ],
+            "text": "ALLERGENIC EXTRACT, PENICILLIN"
+        }
+            }
+        ],
+        "recordedDate": "1996-03-01T15:37:31-06:00",
+        "recorder": {
+            "reference": "Practitioner/example"
+        },
+        "resourceType": "AllergyIntolerance"
+    },
+    "medication_metformin_500mg_tablet": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "860975",
+            "display": "Metformin 500mg tablet"
+          }
+        ],
+        "text": "Metformin 500mg tablet"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "supportingInformation": [
+        {
+          "reference": "Condition/example-condition-1",
+          "display": "Type 2 Diabetes"
+        }
+      ],
+      "authoredOn": "2023-11-14",
+      "requester": {
+        "reference": "Practitioner/example-practitioner-1",
+        "display": "Dr. Smith"
+      }
+    },
+    "medication_metformin_2mg_injection": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "705129",
+            "display": "Morphine 2mg injection"
+          }
+        ],
+        "text": "Morphine 2mg injection"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      }
+    },
+    "medication_ibuprofen_400mg_tablet": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "5640",
+            "display": "Ibuprofen 400mg tablet"
+          }
+        ],
+        "text": "Ibuprofen 400mg tablet"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      }
+    },
+    "medication_lisinopril_10mg_tablet": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "203370",
+            "display": "Lisinopril 10mg tablet"
+          }
+        ],
+        "text": "Lisinopril 10mg tablet"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-2"
+      }
+    },
+    "medication_aspirin_81mg_tablet": {
+          "resourceType": "MedicationRequest",
+          "status": "active",
+          "intent": "order",
+          "medicationCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "309362",
+                "display": "Aspirin 81mg tablet"
+              }
+            ],
+            "text": "Aspirin 81mg tablet"
+          },
+          "subject": {
+            "reference": "Patient/example-patient-3"
+          }
+    },
+    "condition_type_2_diabetes": {
+      "resourceType": "Condition",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "problem-list-item",
+              "display": "Problem List Item"
+            }
+          ],
+          "text": "Problem List Item"
+        }
+      ],
+      "severity": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "24484000",
+            "display": "Severe"
+          }
+        ],
+        "text": "Severe"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "44054006",
+            "display": "Diabetes mellitus type 2"
+          }
+        ],
+        "text": "Type 2 Diabetes"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "onsetDateTime": "2022-03-15",
+      "recordedDate": "2022-03-16",
+      "asserter": {
+        "reference": "Practitioner/example-practitioner-1",
+        "display": "Dr. Smith"
+      },
+      "note": [
+        {
+          "text": "Patient has been experiencing increased blood glucose levels despite treatment."
+        }
+      ]
+    },
+    "condition_acute_cholecystitis": {
+      "resourceType": "Condition",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis",
+              "display": "Encounter Diagnosis"
+            }
+          ]
+        }
+      ],
+      "severity": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "24484000",
+            "display": "Severe"
+          }
+        ],
+        "text": "Severe"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "59593000",
+            "display": "Acute Cholecystitis"
+          }
+        ],
+        "text": "Acute Cholecystitis"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1",
+        "display": "John Doe"
+      },
+      "onsetDateTime": "2024-11-13",
+      "recordedDate": "2024-11-13",
+      "asserter": {
+        "reference": "Practitioner/example-practitioner-1",
+        "display": "Dr. Smith"
+      },
+      "note": [
+        {
+          "text": "Patient admitted with severe abdominal pain, diagnosed with Acute Cholecystitis."
+        }
+      ]
+    },
+    "condition_hypertension": {
+      "resourceType": "Condition",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis",
+              "display": "Encounter Diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "38341003",
+            "display": "Hypertension"
+          }
+        ],
+        "text": "Hypertension"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-2"
+      },
+      "onsetDateTime": "2024-11-13T08:00:00Z"
+    },
+    "condition_heart_attack": {
+      "resourceType": "Condition",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis",
+              "display": "Encounter Diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "22298006",
+            "display": "Myocardial infarction"
+          }
+        ],
+        "text": "Heart Attack"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "onsetDateTime": "2024-11-14T10:30:00Z"
+    },
+    "encounter_acute_cholecystitis": {
+      "resourceType": "Encounter",
+      "status": "in-progress",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "Inpatient"
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "32485007",
+              "display": "Hospital admission"
+            }
+          ],
+          "text": "Hospital Admission"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "participant": [
+        {
+          "individual": {
+            "reference": "Practitioner/example-practitioner-1",
+            "display": "Dr. Smith"
+          }
+        }
+      ],
+      "period": {
+        "start": "2024-11-13T08:30:00Z"
+      },
+      "reasonCode": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59593000",
+              "display": "Acute Cholecystitis"
+            }
+          ],
+          "text": "Acute Cholecystitis"
+        }
+      ],
+      "diagnosis": [
+        {
+          "condition": {
+            "reference": "Condition/example-condition-acute-cholecystitis",
+            "display": "Acute Cholecystitis"
+          },
+          "rank": 1
+        }
+      ],
+      "location": [
+        {
+          "location": {
+            "display": "General Surgery Ward"
+          },
+          "status": "active"
+        }
+      ],
+      "serviceProvider": {
+        "reference": "Organization/example-hospital",
+        "display": "Example Hospital"
+      }
+    },
+    "encounter_hypertension": {
+      "resourceType": "Encounter",
+      "status": "in-progress",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183807002",
+              "display": "Inpatient stay for hypertension management"
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "reference": "Patient/example-patient-2"
+      },
+      "period": {
+        "start": "2024-11-13T08:00:00Z"
+      },
+      "reasonReference": [
+        {
+          "reference": "Condition/condition-hypertension"
+        }
+      ]
+    },
+    "ecounter_heart_attack": {
+      "resourceType": "Encounter",
+      "status": "in-progress",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "305351004",
+              "display": "Admission for acute myocardial infarction"
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "period": {
+        "start": "2024-11-14T10:30:00Z"
+      },
+      "reasonReference": [
+        {
+          "reference": "Condition/condition-heart-attack",
+          "display": "Heart Attack"
+        }
+      ]
+    },
+    "observation_exam_abdominal_pain": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "exam",
+              "display": "Exam"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "281788006",
+            "display": "Abdominal tenderness in right upper quadrant"
+          }
+        ],
+        "text": "Abdominal tenderness in right upper quadrant"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1",
+        "display": "John Doe"
+      },
+      "encounter": {
+        "reference": "Encounter/example-encounter-hospitalization-acute-cholecystitis"
+      },
+      "effectiveDateTime": "2024-11-13T08:45:00Z",
+      "performer": [
+        {
+          "reference": "Practitioner/example-practitioner-1",
+          "display": "Dr. Smith"
+        }
+      ],
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "finding",
+            "display": "Present"
+          }
+        ],
+        "text": "Tenderness present"
+      },
+      "note": [
+        {
+          "text": "Patient reported severe pain upon palpation in the right upper quadrant."
+        }
+      ]
+    },
+    "observation_imagen_abdominal_ultrasound": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "imaging",
+              "display": "Imaging"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "30746-5",
+            "display": "Ultrasound study of Abdomen"
+          }
+        ],
+        "text": "Abdominal Ultrasound"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1",
+        "display": "John Doe"
+      },
+      "encounter": {
+        "reference": "Encounter/example-encounter-hospitalization-acute-cholecystitis"
+      },
+      "effectiveDateTime": "2024-11-13T09:15:00Z",
+      "performer": [
+        {
+          "reference": "Practitioner/example-practitioner-1",
+          "display": "Dr. Smith"
+        }
+      ],
+      "valueString": "Gallbladder wall thickening observed, with possible pericholecystic fluid.",
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "code": "A",
+              "display": "Abnormal"
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "text": "Ultrasound findings suggestive of acute cholecystitis."
+        }
+      ]
+    },
+    "observation_vitals_blood_pressure": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "85354-9",
+            "display": "Blood pressure panel with all children optional"
+          }
+        ],
+        "text": "Blood Pressure"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "effectiveDateTime": "2024-11-14T08:00:00Z",
+      "performer": [
+        {
+          "reference": "Practitioner/example-nurse-1",
+          "display": "Nurse Jackson"
+        }
+      ],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "8480-6",
+                "display": "Systolic blood pressure"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": 130,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "8462-4",
+                "display": "Diastolic blood pressure"
+              }
+            ]
+          },
+          "valueQuantity": {
+            "value": 85,
+            "unit": "mmHg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+          }
+        }
+      ]
+    },
+    "observation_vitals_oxygen_saturation": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "2708-6",
+            "display": "Oxygen saturation in Arterial blood"
+          }
+        ],
+        "text": "Oxygen Saturation (SpO2)"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "effectiveDateTime": "2024-11-15T02:00:00Z",
+      "valueQuantity": {
+        "value": 96,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "observation_laboratory_white_blood_cell_count": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "6690-2",
+            "display": "Leukocytes [#/volume] in Blood"
+          }
+        ],
+        "text": "White Blood Cell Count"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "effectiveDateTime": "2024-11-14T07:30:00Z",
+      "valueQuantity": {
+        "value": 15000,
+        "unit": "cells/uL",
+        "system": "http://unitsofmeasure.org",
+        "code": "10*3/uL"
+      },
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "code": "H",
+              "display": "High"
+            }
+          ]
+        }
+      ]
+    },
+    "observation_overnight_nursing_notes": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "exam",
+              "display": "Exam"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "nursing",
+              "display": "Nursing"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8648-8",
+            "display": "Nursing notes"
+          }
+        ],
+        "text": "Overnight Nursing Notes"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1",
+        "display": "John Doe"
+      },
+      "encounter": {
+        "reference": "Encounter/example-encounter-hospitalization-acute-cholecystitis"
+      },
+      "effectiveDateTime": "2024-11-14T06:00:00Z",
+      "performer": [
+        {
+          "reference": "Practitioner/example-nurse-1",
+          "display": "Nurse Jackson"
+        }
+      ],
+      "valueString": "Patient reported mild abdominal pain around midnight. Pain medication was administered at 01:00 AM. Vitals were stable with blood pressure 125/80 mmHg and heart rate 78 bpm. Patient slept comfortably for the rest of the night.",
+      "note": [
+        {
+          "text": "Patient was alert and cooperative during the shift. Reported no new symptoms. No signs of fever or infection."
+        }
+      ]
+    },
+    "observation_troponin_I_level": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "89579-7",
+            "display": "Troponin I"
+          }
+        ],
+        "text": "Troponin I Level"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "effectiveDateTime": "2024-11-14T11:00:00Z",
+      "valueQuantity": {
+        "value": 1.2,
+        "unit": "ng/mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "ng/mL"
+      },
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "code": "H",
+              "display": "High"
+            }
+          ]
+        }
+      ]
+    },
+    "observation_vitals_heart_rate": {
+      "resourceType": "Observation",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8867-4",
+            "display": "Heart rate"
+          }
+        ],
+        "text": "Heart Rate"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "effectiveDateTime": "2024-11-15T02:00:00Z",
+      "valueQuantity": {
+        "value": 75,
+        "unit": "bpm",
+        "system": "http://unitsofmeasure.org",
+        "code": "bpm"
+      }
+    },
+    "procedure_cardiac_catheterization": {
+      "resourceType": "Procedure",
+      "status": "completed",
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "231696006",
+            "display": "Cardiac catheterization"
+          }
+        ],
+        "text": "Cardiac Catheterization"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "encounter": {
+        "reference": "Encounter/encounter-hospitalization-heart-attack"
+      },
+      "performedPeriod": {
+        "start": "2020-08-06T18:00:29-04:00",
+        "end": "2020-08-06T18:38:38-04:00"
+      }
+    },
+    "procedure_laparoscopic_removal_of_gallbladder": {
+      "resourceType": "Procedure",
+      "status": "completed",
+      "category": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "387713003",
+            "display": "Surgical procedure"
+          }
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "17404008",
+            "display": "Laparoscopic cholecystectomy"
+          }
+        ],
+        "text": "Laparoscopic removal of gallbladder"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-1"
+      },
+      "encounter": {
+        "reference": "Encounter/example-encounter-hospitalization-acute-cholecystitis"
+      },
+      "performedPeriod": {
+        "start": "2020-08-06T18:00:29-04:00",
+        "end": "2020-08-06T18:38:38-04:00"
+      },
+      "performer": [
+        {
+          "actor": {
+            "reference": "Practitioner/example-surgeon-1",
+            "display": "Dr. Emily Wang"
+          }
+        }
+      ],
+      "reasonReference": [
+        {
+          "reference": "Condition/example-condition-acute-cholecystitis"
+        }
+      ]
+    }
+  }
