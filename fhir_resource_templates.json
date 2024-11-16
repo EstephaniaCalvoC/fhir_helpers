@@ -200,36 +200,7 @@
             "reference": "Patient/example-patient-3"
           }
     },
-    "medication_ceftriaxone": {
-      "resourceType": "MedicationRequest",
-      "status": "active",
-      "intent": "order",
-      "medicationCodeableConcept": {
-        "coding": [
-          {
-            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-            "code": "6673",
-            "display": "Metronidazole"
-          },
-          {
-            "system": "http://www.whocc.no/atc",
-            "code": "J01XD01",
-            "display": "Metronidazole"
-          }
-        ],
-        "text": "Metronidazole"
-      },      
-      "medicationReference": {
-        "reference": "Medication/medication-ceftriaxone"
-      },
-      "subject": {
-        "reference": "Patient/example-patient-3"
-      },
-      "substitution": {
-        "allowedBoolean": true
-      }
-    },
-    "medication_metronidazole": {
+    "medication_ceftriaxone_2g_iv": {
       "resourceType": "MedicationRequest",
       "status": "active",
       "intent": "order",
@@ -246,8 +217,34 @@
             "display": "Ceftriaxone"
           }
         ],
-        "text": "Ceftriaxone"
-      },      
+        "text": "Ceftriaxone 2g IV once daily for 7 days"
+      }, 
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "substitution": {
+        "allowedBoolean": true
+      }
+    },
+    "medication_metronidazole_500mg_iv": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "6673",
+            "display": "Metronidazole"
+          },
+          {
+            "system": "http://www.whocc.no/atc",
+            "code": "J01XD01",
+            "display": "Metronidazole"
+          }
+        ],
+        "text": "Metronidazole 500mg IV every 8 hours for 7 days"
+      },     
       "subject": {
         "reference": "Patient/example-patient-3"
       },
