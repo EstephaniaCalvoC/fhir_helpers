@@ -252,6 +252,42 @@
         "allowedBoolean": true
       }
     },
+    "medication_morfin_3mg_iv": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "7052",
+            "display": "Morphine"
+          },
+          {
+            "system": "http://www.whocc.no/atc",
+            "code": "N02AA01",
+            "display": "Morphine"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "372687004",
+            "display": "Morphine sulfate"
+          }
+        ],
+        "text": "Morphine 3mg IV every 8 hours maximum of 3 doses"
+      },      
+      "subject": {
+        "reference": "Patient/example-patient"
+      },
+      "authoredOn": "2024-11-16T10:00:00Z",
+      "requester": {
+        "reference": "Practitioner/example-doctor",
+        "display": "Dr. John Smith"
+      },
+      "substitution": {
+        "allowedBoolean": false
+      }
+    },    
     "condition_type_2_diabetes": {
       "resourceType": "Condition",
       "clinicalStatus": {
