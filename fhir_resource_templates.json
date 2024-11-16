@@ -819,7 +819,7 @@
         }
       ]
     },
-    "observation_vitals_blood-glucose": {
+    "observation_vitals_blood_glucose": {
       "resourceType": "Observation",
       "status": "final",
       "category": [
