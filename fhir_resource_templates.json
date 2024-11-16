@@ -202,9 +202,23 @@
     },
     "medication_ceftriaxone": {
       "resourceType": "MedicationRequest",
-      "id": "medicationrequest-broad-spectrum-antibiotics",
       "status": "active",
       "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "6673",
+            "display": "Metronidazole"
+          },
+          {
+            "system": "http://www.whocc.no/atc",
+            "code": "J01XD01",
+            "display": "Metronidazole"
+          }
+        ],
+        "text": "Metronidazole"
+      },      
       "medicationReference": {
         "reference": "Medication/medication-ceftriaxone"
       },
@@ -219,9 +233,21 @@
       "resourceType": "MedicationRequest",
       "status": "active",
       "intent": "order",
-      "medicationReference": {
-        "reference": "Medication/medication-metronidazole"
-      },
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "21244",
+            "display": "Ceftriaxone"
+          },
+          {
+            "system": "http://www.whocc.no/atc",
+            "code": "J01DD04",
+            "display": "Ceftriaxone"
+          }
+        ],
+        "text": "Ceftriaxone"
+      },      
       "subject": {
         "reference": "Patient/example-patient-3"
       },
