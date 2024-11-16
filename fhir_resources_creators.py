@@ -1,3 +1,4 @@
+import os
 import json
 import copy
 
@@ -19,7 +20,7 @@ with open("/content/fhir_resource_templates.json", 'r') as file:
 
 settings = {
     'app_id': 'retrieve_hospitalized_patients',
-    'api_base': 'https://r4.smarthealthit.org'
+    'api_base': os.getenv("FHIR_SERVER_URL")
 }
 
 smart = client.FHIRClient(settings=settings)
