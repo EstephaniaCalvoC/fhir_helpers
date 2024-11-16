@@ -186,7 +186,7 @@ def create_observation(
                   "observation_troponin_I_level",
                   "observation_vitals_heart_rate"
                   "observation_vitals_oxygen_saturation",
-                  "observation_vitals_blood"
+                  "observation_vitals_blood_glucose"
                   ],
     patient_id: str,
     effective_date_time: str,
