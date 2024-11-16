@@ -200,6 +200,35 @@
             "reference": "Patient/example-patient-3"
           }
     },
+    "medication_ceftriaxone": {
+      "resourceType": "MedicationRequest",
+      "id": "medicationrequest-broad-spectrum-antibiotics",
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/medication-ceftriaxone"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "substitution": {
+        "allowedBoolean": true
+      }
+    },
+    "medication_metronidazole": {
+      "resourceType": "MedicationRequest",
+      "status": "active",
+      "intent": "order",
+      "medicationReference": {
+        "reference": "Medication/medication-metronidazole"
+      },
+      "subject": {
+        "reference": "Patient/example-patient-3"
+      },
+      "substitution": {
+        "allowedBoolean": true
+      }
+    },
     "condition_type_2_diabetes": {
       "resourceType": "Condition",
       "clinicalStatus": {
