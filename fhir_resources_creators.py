@@ -1,3 +1,4 @@
+
 import os
 import json
 import copy
@@ -92,7 +93,9 @@ def create_medication(
                   "medication_metformin_2mg_injection",
                   "medication_ibuprofen_400mg_tablet",
                   "medication_lisinopril_10mg_tablet",
-                  "medication_aspirin_81mg_tablet"],
+                  "medication_aspirin_81mg_tablet",
+                  "medication_ceftriaxone",
+                  "medication_metronidazole"],
     patient_id: str,
     status:str,
     authored_on:str,
