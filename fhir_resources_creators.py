@@ -182,9 +182,11 @@ def create_observation(
     type: Literal["observation_exam_abdominal_pain",
                   "observation_imagen_abdominal_ultrasound",
                   "observation_laboratory_white_blood_cell_count",
+                  "observation_laboratory_hemoglobin_a1c",
                   "observation_troponin_I_level",
                   "observation_vitals_heart_rate"
                   "observation_vitals_oxygen_saturation",
+                  "observation_vitals_blood"
                   ],
     patient_id: str,
     effective_date_time: str,
