@@ -128,7 +128,7 @@
         "display": "Dr. Smith"
       }
     },
-    "medication_metformin_2mg_injection": {
+    "medication_morphine_2mg_injection": {
       "resourceType": "MedicationRequest",
       "status": "active",
       "intent": "order",
@@ -252,7 +252,7 @@
         "allowedBoolean": true
       }
     },
-    "medication_morfin_3mg_iv": {
+    "medication_morphin_3mg_iv": {
       "resourceType": "MedicationRequest",
       "status": "active",
       "intent": "order",
