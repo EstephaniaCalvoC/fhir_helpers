@@ -194,8 +194,8 @@ def create_observation(
                   ],
     patient_id: str,
     effective_date_time: str,
-    encounter_id: str = None,
     value_quantity: float = None,
+    encounter_id: str = None,
     notes: List = None
     ):
   print("#"*30, "Create observation")
