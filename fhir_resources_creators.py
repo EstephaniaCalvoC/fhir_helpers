@@ -12,6 +12,7 @@ from fhirclient.models.allergyintolerance import AllergyIntolerance
 from fhirclient.models.medicationrequest import MedicationRequest
 from fhirclient.models.observation import Observation
 from fhirclient.models.procedure import Procedure
+from fhirclient.models.careplan import CarePlan
 
 
 with open("/content/fhir_resource_templates.json", 'r') as file:
@@ -308,3 +309,34 @@ def create_procedure(
     print(f"Procedure: {procedure.code.text}")
 
     return procedure
+
+
+def ceate_care_plan(
+    patient_id: str,
+    title: str,
+    description: str,
+    start: str,
+    end: str = None,
+    encounter_id: str = None,
+    condition_ids: List = None):
+    data = copy.deepcopy(templates["care_plan"])
+    
+    data.update({"subject": {"reference": f"Patient/{patient_id}"},
+                 "title": title,
+                 "description": description,
+                 "period": {"start": start, "end": end}
+                 })
+    data.update({"supportingInfo": [{"reference": f"Condition/{c_id}"} for c_id in condition_ids]}
+                if condition_ids else {})
+    data.update({"encounter": {"reference": f"Encounter/{encounter_id}"}} if encounter_id else {})
+
+    care_plan = CarePlan(data).create(smart.server)
+
+    # Test
+    care_plan = CarePlan.read(care_plan["id"], smart.server)
+
+    # Print details
+    print(f"Care plan ID: {care_plan.id}")
+    print(f"Period: {care_plan.period.as_json()}")
+
+    return care_plan
