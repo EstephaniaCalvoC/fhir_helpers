@@ -1,4 +1,3 @@
-
 import os
 import json
 import copy
@@ -90,13 +89,13 @@ def create_allergy(type: Literal["alergy_penicillin"], patient_id: str, recorded
 
 def create_medication(
     type: Literal["medication_metformin_500mg_tablet",
-                  "medication_metformin_2mg_injection",
+                  "medication_morphin_2mg_injection",
                   "medication_ibuprofen_400mg_tablet",
                   "medication_lisinopril_10mg_tablet",
                   "medication_aspirin_81mg_tablet",
                   "medication_ceftriaxone_2g_iv",
                   "medication_metronidazole_500mg_iv",
-                  "medication_morfin_3mg_iv"],
+                  "medication_morphin_3mg_iv"],
     patient_id: str,
     status:str,
     authored_on:str,
