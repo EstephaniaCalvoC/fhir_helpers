@@ -46,7 +46,7 @@ def create_patient(names: str, last_name: str, gender: Literal["female", "male"]
   # Print patient details
   print(f"Patient ID: {patient.id}")
   print(f"Patient Name: {smart.human_name(patient.name[0])}")
-  print(f"Patient Birth Date: {patient.birthDate.isostring}")
+  print(f"Patient Birth Date: {patient.birthDate.isostring}", "\n")
 
   return patient
 
@@ -65,7 +65,7 @@ def create_intolerance(type: Literal["intolerance_lactose"], patient_id: str, re
   # Print details
   print(f"Intolerance ID: {intolerance.id}")
   print(f"Recorded date: {intolerance.recordedDate.as_json()}")
-  print(f"Description: {intolerance.reaction[0].substance.text}")
+  print(f"Description: {intolerance.reaction[0].substance.text}", "\n")
 
   return intolerance
 
@@ -84,7 +84,7 @@ def create_allergy(type: Literal["alergy_penicillin"], patient_id: str, recorded
   # Print details
   print(f"Allergy ID: {allergy.id}")
   print(f"Recorded date: {allergy.recordedDate.as_json()}")
-  print(f"Description: {allergy.reaction[0].substance.text}")
+  print(f"Description: {allergy.reaction[0].substance.text}", "\n")
 
   return allergy
 
@@ -119,7 +119,7 @@ def create_medication(
   print(f"Medication ID: {medication.id}")
   print(f"Medicament: {medication.medicationCodeableConcept.text}")
   print(f"Status: {medication.status}")
-  print(f"Authored on: {medication.authoredOn.as_json()}")
+  print(f"Authored on: {medication.authoredOn.as_json()}", "\n")
 
   return medication
 
@@ -146,7 +146,7 @@ def create_condition(
     # Print details
     print(f"Condition ID: {condition.id}")
     print(f"Condition: {condition.code.text}")
-    print(f"On set date: {condition.onsetDateTime.as_json()}")
+    print(f"On set date: {condition.onsetDateTime.as_json()}", "\n")
 
     return condition
 
@@ -177,7 +177,7 @@ def create_encounter(
   print(f"Encounter ID: {encounter.id}")
   print(f"Status: {encounter.status}")
   print(f"Period: {encounter.period.as_json()}")
-  print(f"Reason: {encounter.reasonCode[0].text}")
+  print(f"Reason: {encounter.reasonCode[0].text}", "\n")
 
   return encounter
 
@@ -198,7 +198,6 @@ def create_observation(
     encounter_id: str = None,
     notes: List = None
     ):
-  print("#"*30, "Create observation")
   data = copy.deepcopy(templates[type])
   
   data.update({"subject": {"reference": f"Patient/{patient_id}"},
@@ -209,7 +208,6 @@ def create_observation(
   if value_quantity:
       data["valueQuantity"] = {"value": value_quantity}
 
-  print(data)
   observation = Observation(data).create(smart.server)
 
   # Test
@@ -218,7 +216,7 @@ def create_observation(
   # Print details
   print(f"Observation ID: {observation.id}")
   print(f"Effective date: {observation.effectiveDateTime.as_json()}")
-  print(f"Observation: {observation.code.text}")
+  print(f"Observation: {observation.code.text}", "\n")
   return observation
 
 
@@ -245,7 +243,7 @@ def create_overnight_note(
   # Print details
   print(f"Observation ID: {observation.id}")
   print(f"Effective date: {observation.effectiveDateTime.as_json()}")
-  print(f"Observation: {observation.code.text}")
+  print(f"Observation: {observation.code.text}", "\n")
 
   return observation
 
@@ -277,7 +275,7 @@ def create_blood_pressure_observation(
   # Print details
   print(f"Observation ID: {observation.id}")
   print(f"Effective date: {observation.effectiveDateTime.as_json()}")
-  print(f"Observation: {observation.code.text}")
+  print(f"Observation: {observation.code.text}", "\n")
 
   return observation
 
@@ -309,7 +307,7 @@ def create_procedure(
     # Print details
     print(f"Procedure ID: {procedure.id}")
     print(f"Performed date: {procedure.performedPeriod.as_json()}")
-    print(f"Procedure: {procedure.code.text}")
+    print(f"Procedure: {procedure.code.text}", "\n")
 
     return procedure
 
@@ -340,6 +338,6 @@ def ceate_care_plan(
 
     # Print details
     print(f"Care plan ID: {care_plan.id}")
-    print(f"Period: {care_plan.period.as_json()}")
+    print(f"Period: {care_plan.period.as_json()}", "\n")
 
     return care_plan
