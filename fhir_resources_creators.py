@@ -198,6 +198,7 @@ def create_observation(
     value_quantity: float = None,
     notes: List = None
     ):
+  print("#"*30, "Create observation")
   data = copy.deepcopy(templates[type])
   
   data.update({"subject": {"reference": f"Patient/{patient_id}"},
@@ -207,6 +208,8 @@ def create_observation(
 
   if value_quantity:
       data["valueQuantity"] = {"value": value_quantity}
+
+  print(data)
   observation = Observation(data).create(smart.server)
 
   # Test
