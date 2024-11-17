@@ -940,24 +940,7 @@
         "unit": "mg/dL",
         "system": "http://unitsofmeasure.org",
         "code": "mg/dL"
-      },
-      "referenceRange": [
-        {
-          "low": {
-            "value": 70,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-          },
-          "high": {
-            "value": 140,
-            "unit": "mg/dL",
-            "system": "http://unitsofmeasure.org",
-            "code": "mg/dL"
-          },
-          "text": "Normal fasting range"
-        }
-      ]
+      }
     },
     "observation_laboratory_hemoglobin_a1c": {
       "resourceType": "Observation",
