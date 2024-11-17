@@ -1215,5 +1215,99 @@
           "reference": "Condition/example-condition-acute-cholecystitis"
         }
       ]
-    }
+    },
+    "care_plan": {
+      "resourceType": "CarePlan",
+      "status": "active",
+      "intent": "plan",
+      "title": "Care Plan for Acute Cholecystitis",
+      "description": "Care plan for managing acute cholecystitis, including laparoscopic cholecystectomy, pain management, and pre-surgical instructions.",
+      "subject": {
+        "reference": "Patient/example-patient",
+        "display": "John Doe"
+      },
+      "encounter": {
+        "reference": "Encounter/example-hospitalization",
+        "display": "Hospitalization for acute cholecystitis"
+      },
+      "period": {
+        "start": "2024-11-16T09:00:00Z"
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/care-plan-category",
+              "code": "assess-plan",
+              "display": "Assessment and Plan of Care"
+            }
+          ]
+        }
+      ],
+      "activity": [
+        {
+          "detail": {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "17404005",
+                  "display": "Laparoscopic cholecystectomy"
+                }
+              ],
+              "text": "Perform laparoscopic cholecystectomy"
+            },
+            "status": "in-progress",
+            "location": {
+            "display": "BETH ISRAEL DEACONESS HOSPITAL - PLYMOUTH"
+          }
+          }
+        },
+        {
+          "detail": {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "38614003",
+                  "display": "Morphine"
+                }
+              ],
+              "text": "Morphine for severe pain"
+            },
+            "status": "draft",
+            "location": {
+            "display": "BETH ISRAEL DEACONESS HOSPITAL - PLYMOUTH"
+          }
+          }
+        },
+        {
+          "detail": {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11366-2",
+                  "display": "Last meal"
+                }
+              ],
+              "text": "Monitor fasting state"
+            },
+            "status": "in-progress",
+            "location": {
+            "display": "BETH ISRAEL DEACONESS HOSPITAL - PLYMOUTH"
+          }
+          }
+        }
+      ],
+      "note": [
+        {
+          "authorReference": {
+            "reference": "Practitioner/example-doctor",
+            "display": "Dr. Emily Carter"
+          },
+          "text": "Care plan initiated for acute cholecystitis. Surgery planned, with pain management and fasting instructions in place."
+        }
+      ]
+    }    
   }
